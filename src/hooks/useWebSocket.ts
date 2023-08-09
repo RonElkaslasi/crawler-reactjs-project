@@ -5,23 +5,16 @@ const useWebSocket = (url: string) => {
 
   useEffect(() => {
     const socket = new WebSocket(url);
-    console.log(messages);
 
     socket.onopen = () => {
       console.log("WebSocket connection established.");
     };
 
     socket.onmessage = (event) => {
-      const message = JSON.parse(event?.data);
+      const message = JSON.parse(event.data);
+      console.log(message);
+
       setMessages((prevMessages) => [...prevMessages, message]);
-    };
-
-    socket.onerror = (error) => {
-      console.error("WebSocket error: ", error);
-    };
-
-    socket.onclose = (event) => {
-      console.log("WebSocket connection closed: ", event);
     };
 
     return () => {

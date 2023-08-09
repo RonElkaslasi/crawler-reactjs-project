@@ -1,0 +1,14 @@
+.result-container {
+  //   @include flex(space-evenly, center);
+  border-bottom: 5px solid $myYellow;
+  color: $myBlue;
+
+  p{
+    cursor: pointer;
+  }
+
+  .links-container {
+    @include flexColumn(center, center);
+    // border: 2px solid $myLightBlue;
+  }
+}

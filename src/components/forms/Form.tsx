@@ -42,7 +42,6 @@ const Form = () => {
     };
 
     const res = await submitDetailForScrapeJob(messageBody, userInput.startUrl);
-    console.log(res);
   };
 
   return (
